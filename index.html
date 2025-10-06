@@ -308,7 +308,7 @@
         mapboxgl.accessToken = 'pk.eyJ1IjoieXV0YXZpYSIsImEiOiJjbWc3N2U3MWkwM2VhMmtxMXk0Mjl5c2QzIn0.zJCXIC5DCG6zAPFc6Nlx_g';
 
         const start = {
-            center: [110.36055882023648, -7.827454809214908],
+            center: [110.36055, -7.82745],
             zoom: 12.35,
             pitch: 0,
             bearing: 0
@@ -344,7 +344,7 @@
         // ASRAMA PUTRA
         map.addSource('asrama_putra', {
             type: 'geojson',
-            data: 'assets/geojson/asramaputra.geojson'
+            data: 'assets/geojson/asrama_putra.geojson'
         });
         map.addLayer({
             id: 'asrama_putra',
@@ -362,7 +362,7 @@
         // ASRAMA PUTRI
         map.addSource('asrama_putri', {
             type: 'geojson',
-            data: 'assets/geojson/asramaputri.geojson'
+            data: 'assets/geojson/asrama_putri.geojson'
         });
         map.addLayer({
             id: 'asrama_putri',
@@ -380,7 +380,7 @@
         // BANGUNAN UMUM
         map.addSource('bangunan_umum', {
             type: 'geojson',
-            data: 'assets/geojson/bangunanumum.geojson'
+            data: 'assets/geojson/bangunan_umum.geojson'
         });
         map.addLayer({
             id: 'bangunan_umum',
