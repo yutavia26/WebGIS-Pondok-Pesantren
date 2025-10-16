@@ -15,14 +15,10 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
-        <script src='https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.js'></script>
-        <link href='https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.css' rel='stylesheet' />
-        <link
-        rel="stylesheet"
-        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.2.0/mapbox-gl-directions.css"
-        type="text/css"
-        />
-        <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.2.0/mapbox-gl-directions.js"></script>
+
+        <!-- LEAFLET -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -37,6 +33,7 @@
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#kajian">Kajian</a></li>
                         <li class="nav-item"><a class="nav-link" href="#tentang">Tentang Kami</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#lokasi">Lokasi</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Tim</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
                     </ul>
@@ -105,7 +102,7 @@
                         </div>
                     </li>
                     <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/al quran.jpg" alt="..." /></div>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/quran.jpeg" alt="..." /></div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>1976-an</h4>
@@ -129,7 +126,7 @@
             </div>
         </section>
         <!--Lokasi-->
-        <section id="peta">
+        <section id="lokasi">
             <div class="container">
                 <h2 class="text-center">Peta Lokasi Pondok Pesantren Al-Munawwir</h2>
                 <div class="row mt-4">
@@ -138,13 +135,13 @@
                         <div class="card shadow-sm">
                             <div class="card-header bg-primary text-white fw-bold">Petunjuk</div>
                             <div class="card-body">
-                                <p><span>1. Gunakan tombol zoom in <img src="assets/img/lokasi/plus.png" width="20px">,
-                                    zoom out <img src="assets/img/lokasi/min.png" width="20px">, dan reset arah utara 
-                                    <img src="assets/img/lokasi/north.jpg" width="20px"> untuk mengatur posisi peta.</span></p>
+                                <p><span>1. Gunakan tombol zoom in <img src="assets/img/lokasi/plus.png" width="20px"> dan
+                                    zoom out <img src="assets/img/lokasi/min.png" width="20px">.</span></p>
                                 <p><span>2. Titik biru huruf "A" merupakan titik lokasi Anda.</span></p>
-                                <p><span>3. Klik tombol "Lokasi Pesantren" untuk menampilkan lokasi Pondok Pesantren Al-Munawwir.</span></p>
-                                <p><span>4. Klik salah satu bangunan sebagai tujuan destinasi.</span></p>
-                                <p><span>5. Rute ditampilkan sebagai garis biru pada peta.</span></p>
+                                <p><span>3. Klik tombol lokasi untuk menampilkan lokasi Pondok Pesantren Al-Munawwir.</span></p>
+                                <p><span>4. Rute ditampilkan sebagai garis biru pada peta.</span></p>
+                                <p><span>5. Ubah layer maps pada simbol "peta" di bagian kanan atas.</span></p>
+                                <p><span>6. Pastikan Anda mengizinkan website untuk mengakses lokasi agar rute dapat ditampilkan.</span></p>
                             </div>
                         </div>
                     </div>
@@ -170,7 +167,6 @@
             </div>
         </div>
 </section>
-
         <!-- Team-->
         <section class="page-section bg-light" id="team">
             <div class="container">
@@ -181,9 +177,9 @@
                 <div class="center">
                     <div class="center">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/4.jpg" alt="..." />
-                            <h4>Yutaviananda Devintha</h4>
-                            <p class="text-muted">117230026</p>
+                            <img class="mx-auto rounded-circle" src="assets/img/team/yuta.jpg" alt="..." />
+                            <h4>Yutaviananda Devintha (117230026)</h4>
+                            <p class="text-muted">Mahasiswi Teknik Geomatika UPN "Veteran" Yogyakarta</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
@@ -199,17 +195,23 @@
         <div class="py-5">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/qgis.png" alt="..." aria-label="QGIS Logo" /></a>
+                    <div class="col-lg-2 col-md-4 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/partner/vs.jpeg" alt="..." aria-label="VS Code Logo" /></a>
                     </div>
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/mapbox.png" alt="..." aria-label="Mapbox Logo" /></a>
+                    <div class="col-lg-2 col-md-4 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/partner/qgis.png" alt="..." aria-label="QGIS Logo" /></a>
                     </div>
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/sb.png" alt="..." aria-label="Startbootstrap Logo" /></a>
+                    <div class="col-lg-2 col-md-4 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/partner/sb.png" alt="..." aria-label="Startbootstrap Logo" /></a>
                     </div>
-                    <div class="col-md-3 col-sm-6 my-3">
-                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/logos/github.webp" alt="..." aria-label="GitHub Logo" /></a>
+                    <div class="col-lg-2 col-md-4 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/partner/leaflet.png" alt="..." aria-label="Leaflet Logo" /></a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/partner/ors.png" alt="..." aria-label="OpenRouteService Logo" /></a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="assets/img/partner/github.png" alt="..." aria-label="GitHub Logo" /></a>
                     </div>
                 </div>
             </div>
@@ -299,123 +301,178 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- SB Forms -->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+        <!-- LEAFLET SCRIPT -->
         <script>
-        mapboxgl.accessToken = 'pk.eyJ1IjoieXV0YXZpYSIsImEiOiJjbWc3N2U3MWkwM2VhMmtxMXk0Mjl5c2QzIn0.zJCXIC5DCG6zAPFc6Nlx_g';
+        // === Inisialisasi Peta ===
+        const map = L.map('map').setView([-7.82646, 110.36141], 16);
 
-        const start = {
-            center: [110.36055, -7.82745],
-            zoom: 12.35,
-            pitch: 0,
-            bearing: 0
+        // === Base Layers ===
+        const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        const esri = L.tileLayer(
+            'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+            { maxZoom: 19, attribution: 'Tiles &copy; Esri' }
+        );
+
+        // === Titik Pesantren ===
+        const pesantrenLatLng = [-7.82644, 110.36151];
+        const pesantrenMarker = L.marker(pesantrenLatLng)
+            .addTo(map)
+            .bindPopup("<b>Pesantren Al-Munawwir</b><br>Tujuan Anda");
+
+        // === Layer GeoJSON (langsung tampil) ===
+        const asramaPutra = L.geoJSON(null, {
+            style: f => ({ color: 'black', weight: 1, fillColor: 'rgb(0,162,255)', fillOpacity: 0.6 }),
+            onEachFeature: (f, l) => f.properties?.name && l.bindPopup(f.properties.name)
+        }).addTo(map);
+        fetch('assets/geojson/Asrama Putra.geojson').then(r => r.json()).then(d => asramaPutra.addData(d));
+
+        const asramaPutri = L.geoJSON(null, {
+            style: f => ({ color: 'black', weight: 1, fillColor: 'pink', fillOpacity: 0.6 }),
+            onEachFeature: (f, l) => f.properties?.name && l.bindPopup(f.properties.name)
+        }).addTo(map);
+        fetch('assets/geojson/Asrama Putri.geojson').then(r => r.json()).then(d => asramaPutri.addData(d));
+
+        const bangunanUmum = L.geoJSON(null, {
+            style: f => ({ color: 'black', weight: 1, fillColor: 'brown', fillOpacity: 0.6 }),
+            onEachFeature: (f, l) => f.properties?.name && l.bindPopup(f.properties.name)
+        }).addTo(map);
+        fetch('assets/geojson/Bangunan Umum.geojson').then(r => r.json()).then(d => bangunanUmum.addData(d));
+
+        // === Skala ===
+        L.control.scale().addTo(map);
+
+        // === Legenda dengan background ===
+        const legend = L.control({ position: "bottomleft" });
+        legend.onAdd = function () {
+            const div = L.DomUtil.create("div", "legend");
+            div.innerHTML = `
+                <h6 style="font-weight:bold;margin-bottom:5px;">Legenda</h6>
+                <div><span style="background-color:rgb(0,162,255);width:15px;height:15px;display:inline-block;margin-right:5px;border:1px solid #000;"></span>Asrama Putra</div>
+                <div><span style="background-color:pink;width:15px;height:15px;display:inline-block;margin-right:5px;border:1px solid #000;"></span>Asrama Putri</div>
+                <div><span style="background-color:brown;width:15px;height:15px;display:inline-block;margin-right:5px;border:1px solid #000;"></span>Bangunan Umum</div>
+            `;
+            return div;
         };
-        const end = {
-            center: [110.36141, -7.82646],
-            zoom: 17,
-            bearing: 0,
-            pitch: 0
-        };
+        legend.addTo(map);
 
-        const map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v12',
-            center: [110.36141, -7.82646],
-            zoom: 12
-        });
+        // === Tombol Ganti Layer (kanan atas) ===
+        const layerButton = L.control({ position: 'topright' });
+        layerButton.onAdd = function () {
+            const container = L.DomUtil.create('div', 'layer-button');
+            container.innerHTML = `
+                <div id="layerToggle" class="layer-toggle">🗺️</div>
+                <div id="layerMenu" class="layer-menu">
+                    <div class="option" data-layer="osm">OpenStreetMap</div>
+                    <div class="option" data-layer="esri">Esri Imagery</div>
+                </div>
+            `;
 
-        map.addControl(new mapboxgl.NavigationControl(), 'top-left');
+            const toggle = container.querySelector('#layerToggle');
+            const menu = container.querySelector('#layerMenu');
 
-        // === Directions Control ===
-        const directions = new MapboxDirections({
-            accessToken: mapboxgl.accessToken,
-            unit: 'metric',
-            profile: 'mapbox/driving',
-            language: 'id'
-        });
-        map.addControl(directions, 'top-right');
-
-        // === LOAD GEOJSON ===
-        map.on('load', () => {
-
-        // ASRAMA PUTRA
-        map.addSource('asrama_putra', {
-            type: 'geojson',
-            data: 'assets/geojson/asrama_putra.geojson'
-        });
-        map.addLayer({
-            id: 'asrama_putra',
-            type: 'fill',
-            source: 'asrama_putra',
-            paint: { 'fill-color': 'rgb(0,162,255)', 'fill-opacity': 0.6 }
-        });
-        map.addLayer({
-            id: 'outline_asramaputra',
-            type: 'line',
-            source: 'asrama_putra',
-            paint: { 'line-color': 'black', 'line-width': 1 }
-        });
-
-        // ASRAMA PUTRI
-        map.addSource('asrama_putri', {
-            type: 'geojson',
-            data: 'assets/geojson/asrama_putri.geojson'
-        });
-        map.addLayer({
-            id: 'asrama_putri',
-            type: 'fill',
-            source: 'asrama_putri',
-            paint: { 'fill-color': 'pink', 'fill-opacity': 0.6 }
-        });
-            map.addLayer({
-            id: 'outline_asramaputri',
-            type: 'line',
-            source: 'asrama_putri',
-            paint: { 'line-color': 'black', 'line-width': 1 }
-        });
-
-        // BANGUNAN UMUM
-        map.addSource('bangunan_umum', {
-            type: 'geojson',
-            data: 'assets/geojson/bangunan_umum.geojson'
-        });
-        map.addLayer({
-            id: 'bangunan_umum',
-            type: 'fill',
-            source: 'bangunan_umum',
-            paint: { 'fill-color': 'brown', 'fill-opacity': 0.6 }
-        });
-        map.addLayer({
-            id: 'outline_bangunanumum',
-            type: 'line',
-            source: 'bangunan_umum',
-            paint: { 'line-color': 'black', 'line-width': 1 }
-        });
-
-        // GELOKASI PENGGUNA
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-            directions.setOrigin([position.coords.longitude, position.coords.latitude]);
+            toggle.addEventListener('click', e => {
+                menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+                e.stopPropagation();
             });
-        }
-    });
 
-    // === TOMBOL FLY KE PESANTREN ===
-    let isAtStart = true;
-    document.getElementById('fly').addEventListener('click', () => {
-        const target = isAtStart ? end : start;
-        isAtStart = !isAtStart;
+            document.addEventListener('click', () => {
+                menu.style.display = 'none';
+            });
 
-        map.flyTo({
-            ...target,
-            duration: 2000,
-            essential: true
-        });
-    });
-</script>
+            menu.querySelectorAll('.option').forEach(opt => {
+                opt.addEventListener('click', e => {
+                    const layer = e.target.getAttribute('data-layer');
+                    if (layer === 'osm') {
+                        map.removeLayer(esri);
+                        osm.addTo(map);
+                    } else if (layer === 'esri') {
+                        map.removeLayer(osm);
+                        esri.addTo(map);
+                    }
+                    menu.style.display = 'none';
+                });
+            });
 
+            return container;
+        };
+        layerButton.addTo(map);
+
+        // === Lokasi & Rute ===
+        let routeLine = null;
+        let infoBox = null;
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                pos => {
+                    const userLatLng = [pos.coords.latitude, pos.coords.longitude];
+
+                    const userMarker = L.marker(userLatLng, {
+                        icon: L.divIcon({
+                            html: '<div style="background:#007bff;color:white;border-radius:50%;width:25px;height:25px;display:flex;align-items:center;justify-content:center;font-weight:bold;">A</div>',
+                            className: 'user-marker', iconSize: [25, 25]
+                        })
+                    }).addTo(map).bindPopup("<b>Titik A</b><br>Lokasi Anda Saat Ini");
+
+                    getRoute(userLatLng, pesantrenLatLng);
+
+                    const flyBtn = document.getElementById("fly");
+                    if (flyBtn) {
+                        flyBtn.addEventListener("click", () => {
+                            map.flyTo(pesantrenLatLng, 18, { animate: true, duration: 2 });
+                            pesantrenMarker.openPopup();
+                        });
+                    }
+                },
+                () => alert("Gagal mengambil lokasi. Pastikan izin lokasi aktif.")
+            );
+        } else {
+        alert("Browser tidak mendukung Geolocation.");
+    }
+
+        // === Fungsi Ambil Rute ===
+        function getRoute(start, end) {
+            const url = `https://router.project-osrm.org/route/v1/driving/${start[1]},${start[0]};${end[1]},${end[0]}?overview=full&geometries=geojson`;
+
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    if (!data.routes?.length) {
+                        alert("Rute tidak ditemukan.");
+                        return;
+                    }
+                    const route = data.routes[0];
+                    const coords = route.geometry.coordinates.map(c => [c[1], c[0]]);
+
+                    if (routeLine) map.removeLayer(routeLine);
+                    routeLine = L.polyline(coords, { color: "blue", weight: 5, opacity: 0.9 }).addTo(map);
+
+                    const distanceKm = (route.distance / 1000).toFixed(2);
+                    const durationMin = (route.duration / 60).toFixed(1);
+
+                    map.flyToBounds(routeLine.getBounds(), { padding: [50, 50], animate: true, duration: 1.5 });
+
+                    if (infoBox) map.removeControl(infoBox);
+                    infoBox = L.control({ position: "bottomright" });
+                    infoBox.onAdd = () => {
+                        const div = L.DomUtil.create("div", "info-box");
+                        div.innerHTML = `
+                            <b>Rute ke Pesantren</b><br>
+                            Jarak: ${distanceKm} km<br>
+                            Waktu: ${durationMin} menit
+                        `;
+                        return div;
+                    };
+                    infoBox.addTo(map);
+                })
+                .catch(err => console.error(err));
+            }
+        </script>
     </body>
 </html>
