@@ -326,24 +326,24 @@
             .addTo(map)
             .bindPopup("<b>Pesantren Al-Munawwir</b><br>Tujuan Anda");
 
-        // === Layer GeoJSON (langsung tampil) ===
+        // === Layer GeoJSON ===
         const asramaPutra = L.geoJSON(null, {
             style: f => ({ color: 'black', weight: 1, fillColor: 'rgb(0,162,255)', fillOpacity: 0.6 }),
             onEachFeature: (f, l) => f.properties?.name && l.bindPopup(f.properties.name)
         }).addTo(map);
-        fetch('assets/geojson/Asrama Putra.geojson').then(r => r.json()).then(d => asramaPutra.addData(d));
+        fetch('assets/geojson/asramaputra.geojson').then(r => r.json()).then(d => asramaPutra.addData(d));
 
         const asramaPutri = L.geoJSON(null, {
             style: f => ({ color: 'black', weight: 1, fillColor: 'pink', fillOpacity: 0.6 }),
             onEachFeature: (f, l) => f.properties?.name && l.bindPopup(f.properties.name)
         }).addTo(map);
-        fetch('assets/geojson/Asrama Putri.geojson').then(r => r.json()).then(d => asramaPutri.addData(d));
+        fetch('assets/geojson/asramaputri.geojson').then(r => r.json()).then(d => asramaPutri.addData(d));
 
         const bangunanUmum = L.geoJSON(null, {
             style: f => ({ color: 'black', weight: 1, fillColor: 'brown', fillOpacity: 0.6 }),
             onEachFeature: (f, l) => f.properties?.name && l.bindPopup(f.properties.name)
         }).addTo(map);
-        fetch('assets/geojson/Bangunan Umum.geojson').then(r => r.json()).then(d => bangunanUmum.addData(d));
+        fetch('assets/geojson/bangunanumum.geojson').then(r => r.json()).then(d => bangunanUmum.addData(d));
 
         // === Skala ===
         L.control.scale().addTo(map);
